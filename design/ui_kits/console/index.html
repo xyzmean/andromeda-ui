@@ -1,0 +1,33 @@
+<!-- @dsCard group="Console" viewport="1280x760" name="Консоль splify2 — обзор" subtitle="Шесть разделов, обе темы, счётчик изменений считает диф со применённым" -->
+<!-- @startingPoint section="Console" subtitle="Полная консоль: рельс, обзор, правила, редактор, выходы, каталог, диагностика" viewport="1280x760" -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>splify2 · 26.9 Andromeda</title>
+<link rel="icon" href="../../assets/logo-andromeda.svg">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  html, body { margin: 0; }
+  body { background: var(--an-surface-page); }
+</style>
+<script src="../../_vendor/react.js"></script>
+<script src="../../_vendor/react-dom.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../_preview/console.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  (function () {
+    var el = document.getElementById("root");
+    try {
+      ReactDOM.createRoot(el).render(React.createElement(__AndromedaConsole.Console));
+    } catch (e) {
+      el.innerHTML = '<pre style="padding:24px;font-family:ui-monospace,Menlo,monospace">' + String(e && e.stack || e) + '</pre>';
+    }
+  })();
+</script>
+</body>
+</html>
