@@ -1,0 +1,13 @@
+/* Andromeda type.
+   Production: the console runs inside LuCI and inherits the host stack —
+   do NOT ship a webfont there. The imports below are for mocks, decks and
+   marketing surfaces, where Onest stands in for Google Sans (Cyrillic + Latin,
+   same geometric-humanist skeleton). Flagged substitution: see readme.md. */
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  --an-font-sans: "Onest", "Google Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --an-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* Use inside LuCI: inherits Argon's own stack, no download. */
+  --an-font-host: inherit;
+}
