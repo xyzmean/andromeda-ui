@@ -10,14 +10,9 @@ import { describe, outMeta } from "./data.js";
 
 export function RulesScreen({ rules, onEdit, onToggle, onMove, onNewRule, onNewException }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "var(--an-space-8)", flexWrap: "wrap" }}>
-        <div style={{ flex: 1, minWidth: 240 }}>
-          <h1 style={{ font: "var(--an-text-title)", letterSpacing: "var(--an-tracking-title)" }}>Правила</h1>
-          <p style={{ marginTop: "var(--an-space-3)", font: "var(--an-text-body-sm)", color: "var(--an-text-muted)" }}>
-            Сверху вниз — побеждает первое совпадение.
-          </p>
-        </div>
+    <div className="console-screen" style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
+      <div className="console-toolbar">
+        <div className="console-toolbar-note">Сверху вниз — побеждает первое совпадение.</div>
         <div style={{ display: "flex", gap: "var(--an-space-4)" }}>
           <Button tone="secondary" onClick={onNewException}>Исключение</Button>
           <Button icon={<Icon name="plus" />} onClick={onNewRule}>Новое правило</Button>

@@ -15,6 +15,7 @@ const SECTIONS = [
 export function Rail({ view, onView, rulesCount, theme, onTheme, onStop }) {
   return (
     <aside
+      className="console-rail"
       style={{
         width: "var(--an-rail-width)",
         background: "var(--an-surface-rail)",
@@ -27,10 +28,10 @@ export function Rail({ view, onView, rulesCount, theme, onTheme, onStop }) {
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "var(--an-space-5)", padding: "0 6px" }}>
-        <img src="../../assets/logo-andromeda.svg" alt="" style={{ width: 32, height: 32, borderRadius: 9 }} />
+        <img src="../../assets/logo-andromeda.svg" alt="" style={{ width: 36, height: 36, borderRadius: 10 }} />
         <div style={{ lineHeight: 1.15 }}>
           <div style={{ font: "var(--an-text-heading)" }}>splify2</div>
-          <div style={{ font: "var(--an-text-micro)", color: "var(--an-text-muted)" }}>26.9 Andromeda</div>
+          <div style={{ font: "var(--an-text-micro)", color: "var(--an-text-muted)" }}>управление маршрутизацией</div>
         </div>
       </div>
 
@@ -59,9 +60,11 @@ export function Rail({ view, onView, rulesCount, theme, onTheme, onStop }) {
             { value: "dark", label: <span style={{ display: "inline-flex", alignItems: "center", gap: 6 }}><Icon name="moon" size={14} /> Тёмная</span> },
           ]}
         />
-        <div style={{ border: "1px solid var(--an-border)", borderRadius: "var(--an-radius-control)", padding: 11 }}>
-          <div style={{ font: "var(--an-text-caption)", color: "var(--an-text-muted)" }}>движок</div>
-          <div style={{ font: "var(--an-text-body-sm)", marginTop: 2 }}>steer 1.1.2 · extended</div>
+        <div style={{ border: "1px solid var(--an-border)", borderRadius: "var(--an-radius-control)", padding: 11, background: "var(--an-surface-card)" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, font: "var(--an-text-caption)", color: "var(--an-text-muted)" }}>
+            <span className="console-connection-dot" /> движок
+          </div>
+          <div style={{ font: "var(--an-text-body-sm)", marginTop: 4 }}>steer 1.1.2 · extended</div>
         </div>
         <Button tone="danger" full icon={<Icon name="power" />} onClick={onStop}>Остановить всё</Button>
       </div>

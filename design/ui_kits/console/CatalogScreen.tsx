@@ -39,13 +39,7 @@ export function CatalogScreen({ rules, onUse, onToast }) {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
-      <div>
-        <h1 style={{ font: "var(--an-text-title)", letterSpacing: "var(--an-tracking-title)" }}>Каталог</h1>
-        <p style={{ marginTop: "var(--an-space-3)", font: "var(--an-text-body-sm)", color: "var(--an-text-muted)" }}>
-          Запись работает, когда на неё указывает правило. Списки обновляются сами.
-        </p>
-      </div>
+    <div className="console-screen" style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
 
       <div style={{ display: "flex", alignItems: "center", gap: "var(--an-space-5)", flexWrap: "wrap" }}>
         <Input icon={<Icon name="search" />} value={query} onChange={(e) => setQuery(e.target.value)} placeholder="поиск по каталогу" style={{ flex: 1, minWidth: 260, background: "var(--an-surface-card)" }} />

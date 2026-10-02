@@ -34,15 +34,24 @@ export function OverviewScreen({ rulesOn, onNewRule, onDiag, quota = true }) {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-section)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "var(--an-space-8)", flexWrap: "wrap" }}>
-        <Verdict state="running" meta={"устройств в сети: 9 · время работы 4 ч 12 мин"} style={{ flex: 1, minWidth: 280 }} />
-        <Button icon={<Icon name="plus" />} onClick={onNewRule}>Новое правило</Button>
+    <div className="console-screen" style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-section)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
+      <div className="overview-hero">
+        <div className="overview-hero-verdict">
+          <Verdict state="running" meta={"устройств в сети: 9 · время работы 4 ч 12 мин"} />
+          <div className="overview-hero-caption">
+            <span className="console-connection-dot" />
+            Последняя синхронизация с ядром — только что
+          </div>
+        </div>
+        <div className="overview-hero-actions">
+          <span>Маршруты применяются без перезапуска</span>
+          <Button icon={<Icon name="plus" />} onClick={onNewRule}>Новое правило</Button>
+        </div>
       </div>
 
       <Callout title="проверок с предупреждением" count={1} verbatim="список domains/telegram.lst старше суток" action={<span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>диагностика <Icon name="arrowRight" size={14} /></span>} onClick={onDiag} />
 
-      <div style={{ display: "grid", gridTemplateColumns: "minmax(0,1.5fr) minmax(0,1fr)", gap: "var(--an-gap-block)", alignItems: "start" }}>
+      <div className="overview-content-grid">
         <Card heading="Куда идёт трафик" meta="с загрузки роутера">
           <div style={{ marginTop: "var(--an-space-8)", display: "flex", flexDirection: "column", gap: "var(--an-space-7)" }}>
             {FLOWS.map((f, i) => (
@@ -106,7 +115,7 @@ export function OverviewScreen({ rulesOn, onNewRule, onDiag, quota = true }) {
         )}
       </div>
 
-      <dl style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0,1fr))", gap: "var(--an-gap-block)", margin: 0 }}>
+      <dl className="overview-stats">
         <StatPair label="правил включено" value={rulesOn} />
         <StatPair label="устройств в сети" value="9" />
         <StatPair label="отклик · vless-nl" value="42 мс" tone="success" />

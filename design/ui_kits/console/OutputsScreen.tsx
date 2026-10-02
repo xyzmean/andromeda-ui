@@ -34,14 +34,9 @@ export function OutputsScreen({ obfs, onObfs, onToast, onQuota }) {
   const obfsError = !obfs.on ? "" : !obfs.host ? "" : !isIp(obfs.host) ? "Нужен адрес, а не имя: движок не разрешает имена." : "";
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
-      <div style={{ display: "flex", alignItems: "flex-start", gap: "var(--an-space-8)", flexWrap: "wrap" }}>
-        <div style={{ flex: 1, minWidth: 240 }}>
-          <h1 style={{ font: "var(--an-text-title)", letterSpacing: "var(--an-tracking-title)" }}>Выходы</h1>
-          <p style={{ marginTop: "var(--an-space-3)", font: "var(--an-text-body-sm)", color: "var(--an-text-muted)" }}>
-            Правило указывает на имя выхода, не на устройство.
-          </p>
-        </div>
+    <div className="console-screen" style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
+      <div className="console-toolbar">
+        <div className="console-toolbar-note">Правило указывает на имя выхода, не на устройство.</div>
         <div style={{ display: "flex", gap: "var(--an-space-4)" }}>
           <Button tone="secondary" size="sm" onClick={() => onToast("warn", "Свободных туннельных устройств нет — поднимите туннель")}>+ Туннель</Button>
           <Button tone="secondary" size="sm" onClick={() => onToast("warn", "Свободных туннельных устройств нет — поднимите туннель")}>+ VLESS</Button>
