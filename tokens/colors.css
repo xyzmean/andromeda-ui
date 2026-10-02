@@ -14,7 +14,8 @@
   --an-warn: #ffc107;
   --an-danger: #f5365c;
   --an-success-ink: #1c8f5f;
-  --an-warn-ink: #a97a00;
+  /* #a97a00 на warn-soft — 3,2:1, мелкий текст не проходил AA; #7a5300 — 6,2:1. */
+  --an-warn-ink: #7a5300;
   --an-danger-ink: #c0304f;
   --an-success-soft: rgba(45, 206, 137, 0.10);
   --an-warn-soft: rgba(255, 193, 7, 0.08);
@@ -46,7 +47,9 @@
 
   --an-text: var(--an-grey-90);
   --an-text-secondary: var(--an-grey-75);
-  --an-text-muted: var(--an-grey-60);
+  /* Текст-подпись. grey-60 (#8b93a5) на белом — 3,1:1, для 12–13 px мало (AA = 4,5:1).
+     grey-60 остаётся для иконок, ручек и линий; текст — #6f778a, 4,6:1. */
+  --an-text-muted: #6f778a;
   --an-text-on-accent: var(--an-accent-on);
 
   /* Категориальная шкала — только для наборов, где рядов заведомо несколько и все

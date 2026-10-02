@@ -36,7 +36,7 @@ export declare const STATE: {
     readonly ink: {
         readonly light: {
             readonly success: "#1c8f5f";
-            readonly warn: "#a97a00";
+            readonly warn: "#7a5300";
             readonly danger: "#c0304f";
         };
         readonly dark: {
@@ -56,7 +56,7 @@ export declare const SURFACE: {
         readonly borderSoft: "#f4f5f8";
         readonly text: "#22252e";
         readonly textSecondary: "#5b6478";
-        readonly textMuted: "#8b93a5";
+        readonly textMuted: "#6f778a";
         readonly knobOff: "#c3c9d6";
     };
     readonly dark: {

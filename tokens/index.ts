@@ -13,13 +13,13 @@ export const EASE = "cubic-bezier(0.4, 0, 0.2, 1)";
  *  вместе с темой, цвет перестанет что-либо значить. */
 export const STATE = {
   success: "#2dce89", warn: "#ffc107", danger: "#f5365c",
-  ink: { light: { success: "#1c8f5f", warn: "#a97a00", danger: "#c0304f" },
+  ink: { light: { success: "#1c8f5f", warn: "#7a5300", danger: "#c0304f" },
          dark: { success: "#2dce89", warn: "#e5b23c", danger: "#ff6b86" } },
 } as const;
 
 export const SURFACE = {
   light: { page: "#f6f7f9", card: "#ffffff", rail: "#fbfbfd", field: "#f2f4f7", border: "#eceef3", borderSoft: "#f4f5f8",
-           text: "#22252e", textSecondary: "#5b6478", textMuted: "#8b93a5", knobOff: "#c3c9d6" },
+           text: "#22252e", textSecondary: "#5b6478", textMuted: "#6f778a", knobOff: "#c3c9d6" },
   dark:  { page: "#121317", card: "#1b1d22", rail: "#17181c", field: "#23252b", border: "#2a2c33", borderSoft: "#232529",
            text: "#e8eaf0", textSecondary: "#b6bccb", textMuted: "#8b93a7", knobOff: "#6b7180" },
 } as const;
