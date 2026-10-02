@@ -11,6 +11,15 @@ import { Dialog } from "../../components/feedback/Dialog";
 import { Toast, ToastStack } from "../../components/feedback/Toast";
 import { INITIAL_RULES, SERVICES, snapshot, countChanges } from "./data.js";
 
+const PAGE_META = {
+  overview: { eyebrow: "Состояние сети", title: "Обзор", detail: "Трафик, подписка и последние проверки" },
+  rules: { eyebrow: "Маршрутизация", title: "Правила", detail: "Порядок правил определяет маршрут" },
+  editor: { eyebrow: "Маршрутизация", title: "Редактор правила", detail: "Изменения сохраняются сразу" },
+  outputs: { eyebrow: "Подключения", title: "Выходы", detail: "Туннели и параметры их запуска" },
+  catalog: { eyebrow: "Готовые наборы", title: "Каталог", detail: "Добавляйте сервисы в правила одним действием" },
+  diag: { eyebrow: "Служебное", title: "Диагностика", detail: "Проверки конфигурации и журнала" },
+};
+
 export function Console() {
   const [theme, setTheme] = React.useState("light");
   const [view, setView] = React.useState("overview");
@@ -73,11 +82,12 @@ export function Console() {
 
   const rule = rules.find((r) => r.id === editing) || null;
   const screen = rule ? "editor" : view;
+  const page = PAGE_META[screen];
 
   return (
     <div
       data-theme={theme === "dark" ? "dark" : undefined}
-      className="an-root"
+      className="an-root console-root"
       style={{ minHeight: "100vh", display: "grid", gridTemplateColumns: "var(--an-rail-width) minmax(0,1fr)" }}
     >
       <Rail
@@ -89,7 +99,18 @@ export function Console() {
         onStop={() => setStopOpen(true)}
       />
 
-      <main style={{ minWidth: 0, padding: "24px 28px 96px" }}>
+      <main className="console-main">
+        <header className="console-page-header">
+          <div>
+            <p className="console-eyebrow">{page.eyebrow}</p>
+            <h1>{page.title}</h1>
+            <p className="console-page-detail">{page.detail}</p>
+          </div>
+          <div className="console-connection" aria-label="Ядро работает">
+            <span className="console-connection-dot" />
+            <span>ядро на связи</span>
+          </div>
+        </header>
         {screen === "overview" ? (
           <OverviewScreen
             rulesOn={rules.filter((r) => r.on).length}

@@ -33,7 +33,7 @@ export function RuleEditorScreen({ rule, position, total, onPatch, onClose, onDe
       : "";
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
+    <div className="console-screen" style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
       <Breadcrumb items={[{ label: "Правила", onClick: onClose }, { label: rule.name }]} meta={"место в очереди: " + position + " из " + total} />
 
       <Card>

@@ -13,13 +13,7 @@ const OK_CHECKS = [
 export function DiagnosticsScreen() {
   const [open, setOpen] = React.useState(false);
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
-      <div>
-        <h1 style={{ font: "var(--an-text-title)", letterSpacing: "var(--an-tracking-title)" }}>Диагностика</h1>
-        <p style={{ marginTop: "var(--an-space-3)", font: "var(--an-text-body-sm)", color: "var(--an-text-muted)" }}>
-          Проверки идут по ядру и живым процессам, не по настройке.
-        </p>
-      </div>
+    <div className="console-screen" style={{ display: "flex", flexDirection: "column", gap: "var(--an-gap-block)", animation: "an-enter var(--an-dur-enter) var(--an-ease)" }}>
 
       <Card heading="проверок с предупреждением: 1">
         <div style={{ marginTop: "var(--an-space-6)", font: "var(--an-text-body)" }}>список domains/telegram.lst старше суток</div>
